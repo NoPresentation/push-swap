@@ -9,7 +9,10 @@ int main(int argc, char **argv)
 	
 	a = check_input(argc, argv);
 	if (!a)
+	{
 		ft_printf("ERROR\n");
+		return (0);
+	}
 	print_stack(a);
 	ft_printf("size = %d\n", a->size);
 	return (0);

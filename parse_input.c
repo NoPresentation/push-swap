@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 10:58:11 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/03 11:15:22 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/03 18:49:56 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,55 +16,61 @@ static int ft_isnumber(const char *s)
 {
 	int		i;
 
+	if (!s || s[i] == '\0')
+		return (-1);
 	i = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
 	while (s[i])
 	{
 		if (!ft_isdigit(s[i]))
-			return (-1);
+			return (0);
 		i++;
 	}
 	return (1);
 }
 
 
-static t_stack *fill_stack(int size, int *elements)
+static int is_duplicate(t_stack *stack, int value)
 {
-	t_stack	*a;
-	int		i;
+	t_node *node;
 
-	a = create_stack();
-	if (!a)
-		return (NULL);
-	while (i < size)
+	if (!stack)
+		return (1);
+	node = stack->head;
+	while (node)
 	{
-		push(a, create_node(elements[i]));
-		i++;
+		if (node->value == value)
+			return (1);
+		node = node->next;
 	}
-	return (a);
+	return (0);
 }
+
 
 t_stack	*check_input(int size, char **input)
 {
-	int			i;
-	int			j;
-	int			elements[size];
-	t_stack		*a;
-
+	int	i;
+	int	value;
+	
+	t_stack	*a;
+	
 	i = 1;
-	j = 0;
-	while (i < size && input[i])
+	a = create_stack();
+	while (i < size)
 	{
-		if (ft_isnumber(input[i]))
+		if (!(ft_isnumber(input[i])))
 		{
-			elements[j] = ft_atoi(input[i]);
-		}
-		else
-		{
-			ft_printf("ERROR\n");
+			free_stack(&a);
 			return (NULL);
+		}
+		value = ft_atoi(input[i]);
+		if (is_duplicate(a, value) || !push(a, create_node(value)))
+		{
+			free_stack(&a);
+			return (NULL);	
 		}
 		i++;
 	}
-	a = fill_stack(size, elements);
 	return (a);
 }

@@ -21,7 +21,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) $(LIB) -o push_swap
-	rm *.o
 
 clean:
 	rm *.o
