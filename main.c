@@ -15,5 +15,6 @@ int main(int argc, char **argv)
 	}
 	print_stack(a);
 	ft_printf("size = %d\n", a->size);
+	free_stack(&a);
 	return (0);
 }

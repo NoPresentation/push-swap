@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 10:58:11 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/03 18:49:56 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/03 18:55:50 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static int ft_isnumber(const char *s)
 {
 	int		i;
 
+	i = 0;
 	if (!s || s[i] == '\0')
 		return (-1);
-	i = 0;
 	if (s[i] == '-' || s[i] == '+')
 		i++;
 	while (s[i])

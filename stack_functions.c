@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 22:44:55 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/03 18:48:09 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/03 19:15:13 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,29 @@ t_node	*push(t_stack *s, t_node *n)
 	return (n);
 }
 
-int	*pop(t_stack **s)
+int	*pop(t_stack *s)
 {
-	t_stack	*st;
 	t_node	*temp;
 	int		*value;
 
-	st = *s;
-	if (!s || st->size == 0)
+	if (!s || s->size == 0)
 		return (NULL);
 	value = malloc(sizeof(int));
-	if (st->size == 1)
+	if (s->size == 1)
 	{
-		*value = st->head->value;
-		free(st->head);
-		st->head = NULL;
-		st->tail = NULL;
-		st->size = 0;
+		*value = s->head->value;
+		free(s->head);
+		s->head = NULL;
+		s->tail = NULL;
+		s->size = 0;
 		return (value);
 	}
-	temp = st->head;
+	temp = s->head;
 	*value = temp->value;
-	st->head = st->head->next;
-	st->head->prev = NULL;
+	s->head = s->head->next;
+	s->head->prev = NULL;
 	free(temp);
-	st->size--;
+	s->size--;
 	return (value);
 }
 
