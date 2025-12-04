@@ -1,48 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rreverse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 19:20:58 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/04 18:32:45 by anashwan         ###   ########.fr       */
+/*   Created: 2025/12/04 17:46:24 by anashwan          #+#    #+#             */
+/*   Updated: 2025/12/04 19:00:43 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		sa(t_stack *a)
+int	rra(t_stack *a)
 {
-	int temp;
+	t_node	*temp;
 
-	if (!a)
+	if (!a || a->size <= 1)
 		return (-1);
-	if (a->size < 2)
-		return (0);
-	temp = a->head->value;
-	a->head->value = a->head->next->value;
-	a->head->next->value = temp;
+	temp = a->tail;
+	a->tail = temp->prev;
+	a->tail->next = NULL;
+	a->head->prev = temp;
+	temp->next = a->head;
+	temp->prev = NULL;
+	a->head = temp;
 	return (1);
 }
 
-int		sb(t_stack *b)
+int	rrb(t_stack *b)
 {
-	int temp;
+	t_node	*temp;
 
-	if (!b)
+	if (!b || b->size <= 1)
 		return (-1);
-	if (b->size < 2)
-		return (0);
-	temp = b->head->value;
-	b->head->value = b->head->next->value;
-	b->head->next->value = temp;
+	temp = b->tail;
+	b->tail = temp->prev;
+	b->tail->next = NULL;
+	b->head->prev = temp;
+	temp->next = b->head;
+	temp->prev = NULL;
+	b->head = temp;
 	return (1);
 }
 
-int		ss(t_stack *a, t_stack *b)
+int rrr(t_stack *a, t_stack *b)
 {
 	if (!a || !b)
 		return (-1);
-	return (sa(a) + sb(b));
+	return (rra(a) + rrb(b));
 }

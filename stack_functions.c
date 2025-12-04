@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 22:44:55 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/03 19:15:13 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/04 18:55:59 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	free_stack(t_stack **s)
 	t_node	*n;
 	t_node	*temp;
 
-	if (!s || (*s)->size == 0)
+	if (!s)
 		return ;
 	n = (*s)->head;
 	while (n)

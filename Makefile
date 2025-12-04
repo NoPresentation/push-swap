@@ -10,8 +10,10 @@ SRC = 	main.c \
 		output.c \
 		push.c \
 		swap.c \
+		stack_functions.c \
 		reverse.c \
-		stack_functions.c
+		rreverse.c \
+		meow.c
 
 OBJ = $(SRC:.c=.o)
 
