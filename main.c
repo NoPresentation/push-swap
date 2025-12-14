@@ -5,20 +5,27 @@ int main(int argc, char **argv)
 	t_stack *a;
 	t_stack *b;
 
-	if (argc == 1)
-		return (0);
-	
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
 	a = check_input(argc, argv);
 	b = create_stack();
 	if (!a)
 	{
-		ft_printf("ERROR\n");
-		free_stack(&b);
+		ft_printf("Error\n");
+		free_all(&a, &b);
 		return (0);
 	}
-	ft_printf("size = %d\n", a->size);
-	test(a, b);
-	free_stack(&a);
-	free_stack(&b);
+	if (!is_sorted(a))
+	{
+		if (a->size <= 3)
+			sort_three(a);
+		else
+			push_swap(a, b);
+	}
+	// if (is_sorted(a))
+	// 	ft_printf("SORTED!!!\n");
+	free_all(&a, &b);
 	return (0);
 }

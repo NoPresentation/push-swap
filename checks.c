@@ -6,11 +6,27 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 10:58:11 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/04 18:53:42 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/13 23:06:27 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+int	is_sorted(t_stack* a)
+{
+	t_node *node;
+
+	node = a->head;
+	while (node->next)
+	{
+		if (node->value > node->next->value)
+			return (0);
+		node = node->next;
+	}
+	return (1);
+}
+
 
 static int ft_isnumber(const char *s)
 {
@@ -52,24 +68,22 @@ t_stack	*check_input(int size, char **input)
 {
 	int	i;
 	int	value;
-	
+	t_node	*node;
 	t_stack	*a;
 	
 	i = 1;
+	if (size == 2)
+		i = 0;
 	a = create_stack();
 	while (i < size)
 	{
 		if (!(ft_isnumber(input[i])))
-		{
-			free_stack(&a);
 			return (NULL);
-		}
 		value = ft_atoi(input[i]);
-		if (is_duplicate(a, value) || !push(a, create_node(value)))
-		{
-			free_stack(&a);
-			return (NULL);	
-		}
+		node = create_node(value);
+		if (is_duplicate(a, value) || !node)
+			return (NULL);
+		push(a, node);
 		i++;
 	}
 	return (a);

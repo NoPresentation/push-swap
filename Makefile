@@ -1,19 +1,22 @@
-CC = cc
+CC = gcc
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -g -O0 -Wall -Werror -Wextra
 
 NAME = push_swap
 
-SRC = 	main.c \
+SRC = \
+		calculations.c \
+		checks.c \
 		construct.c \
-		parse_input.c  \
+		main.c \
 		output.c \
 		push.c \
-		swap.c \
+		push_swap.c \
+		rotate.c \
+		simple_sort.c \
 		stack_functions.c \
-		reverse.c \
-		rreverse.c \
-		meow.c
+		swap.c \
+		utils.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -23,6 +26,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) $(LIB) -o push_swap
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm *.o

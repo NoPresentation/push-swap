@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 19:20:58 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/13 17:31:23 by anashwan         ###   ########.fr       */
+/*   Created: 2025/12/13 03:52:10 by anashwan          #+#    #+#             */
+/*   Updated: 2025/12/13 23:12:25 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap(t_stack *s, char c)
+int		max(int x, int y)
 {
-	int temp;
-
-	if (s->size < 2)
-		return (0);
-	temp = s->head->value;
-	s->head->value = s->head->next->value;
-	s->head->next->value = temp;
-	if (c == 'a' || c == 'b')
-		ft_printf("s%c\n", c);
-	return (1);
+	if (x >= y)
+		return (x);
+	return (y);
 }
 
-void	ss(t_stack *a, t_stack *b)
+int		min(int x, int y)
 {
-	if (swap(a, 's') || swap(b, 's'))
-		ft_printf("ss\n");
+	if (x <= y)
+		return (x);
+	return (y);
+}
+
+int		abs(int x)
+{
+	if (x >= 0)
+		return (x);
+	return (-1 * x);
 }

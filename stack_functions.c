@@ -6,29 +6,26 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 22:44:55 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/04 18:55:59 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/14 11:39:23 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*push(t_stack *s, t_node *n)
+void	push(t_stack *s, t_node *n)
 {
-	if (!s || !n)
-		return (NULL);
 	if (s->size == 0)
 	{
 		s->head = n;
 		s->tail = n;
 		s->size++;
-		return (n);
+		return ;
 	}
 	n->next = s->head;
 	n->prev = NULL;
 	s->head->prev = n;
 	s->head = n;
 	s->size++;
-	return (n);
 }
 
 int	*pop(t_stack *s)
@@ -36,9 +33,9 @@ int	*pop(t_stack *s)
 	t_node	*temp;
 	int		*value;
 
-	if (!s || s->size == 0)
-		return (NULL);
 	value = malloc(sizeof(int));
+	if (!value)
+		return (NULL);
 	if (s->size == 1)
 	{
 		*value = s->head->value;
@@ -57,26 +54,12 @@ int	*pop(t_stack *s)
 	return (value);
 }
 
-int	*peek_top(t_stack *s)
-{
-	if (!s || s->size == 0)
-		return (NULL);
-	return (&(s->head->value));
-}
-
-int	*peek_tail(t_stack *s)
-{
-	if (!s || s->size == 0)
-		return (NULL);
-	return (&(s->tail->value));
-}
-
 void	free_stack(t_stack **s)
 {
 	t_node	*n;
 	t_node	*temp;
 
-	if (!s)
+	if (!s || !*s)
 		return ;
 	n = (*s)->head;
 	while (n)
@@ -86,4 +69,11 @@ void	free_stack(t_stack **s)
 		n = temp;
 	}
 	free(*s);
+	*s = NULL;
+}
+
+void	free_all(t_stack **a, t_stack **b)
+{
+	free_stack(a);
+	free_stack(b);
 }

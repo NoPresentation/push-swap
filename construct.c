@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 22:45:13 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/03 00:31:45 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/13 16:31:58 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 t_node	*create_node(int value)
 {
-	t_node	*new_t_node;
+	t_node	*new_node;
 
-	new_t_node = malloc(sizeof(t_node));
-	if (!new_t_node)
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
 		return (NULL);
-	new_t_node->next = NULL;
-	new_t_node->prev = NULL;
-	new_t_node->value = value;
-	return (new_t_node);
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	new_node->target = NULL;
+	new_node->value = value;
+	new_node->cost = 0;
+	return (new_node);
 }
 
 t_stack	*create_stack(void)
@@ -34,6 +36,9 @@ t_stack	*create_stack(void)
 		return (NULL);
 	new_stack->head = NULL;
 	new_stack->tail = NULL;
+	new_stack->min = NULL;
+	new_stack->max = NULL;
+	new_stack->cheapest = NULL;
 	new_stack->size = 0;
 	return (new_stack);
 }
