@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 00:09:23 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/13 23:23:14 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:39:06 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdio.h>
 # include <unistd.h>
 #include <limits.h>
-# include "libft.h"
-# include "ft_printf.h"
+# include "../libft/minilibft.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct doubly_list
 {
@@ -39,18 +39,18 @@ typedef struct s_stack
 }					t_stack;
 
 // Validation
-t_stack		*check_input(int size, char **input);
+t_stack		*parse_input(int argc, char **argv);
 int			is_sorted(t_stack* a);
 
-// Constructors
-t_node	*create_node(int value);
-t_stack	*create_stack(void);
+// Sorting
+void	push_swap(t_stack *a, t_stack *b);
 
 // Stack functions
+t_node	*create_node(int value);
+t_stack	*create_stack(void);
 void	push(t_stack *s, t_node *n);
 int		*pop(t_stack *s);
 void	free_stack(t_stack **s);
-void	free_all(t_stack **a, t_stack **b);
 
 // push operations
 int		pa(t_stack *a, t_stack *b);
@@ -64,7 +64,6 @@ void	ss(t_stack *s, t_stack *b);
 int		rotate(t_stack *s, char c);
 void	rr(t_stack *a, t_stack *b);
 
-
 // rrr
 int		rev_rotate(t_stack *s, char c);
 void 	rrr(t_stack *a, t_stack *b);
@@ -73,22 +72,10 @@ void 	rrr(t_stack *a, t_stack *b);
 void	calculate_cost(t_stack *s);
 void	assign_targets(t_stack *first, t_stack *second);
 void	find_cheapest(t_stack *b);
-void	perform_operations(t_stack *a, t_stack *b);
-void	final_touch(t_stack *a);
 
 // Utils
 int		abs(int x);
 int		min(int x, int y);
 int		max(int x, int y);
-
-// Print out functions
-void	print_stack(t_stack *s);
-void	print_ab(t_stack *stack_a, t_stack *stack_b);
-
-
-// Sorting
-void	push_swap(t_stack *a, t_stack *b);
-void	sort_three(t_stack *a);
-
 
 #endif

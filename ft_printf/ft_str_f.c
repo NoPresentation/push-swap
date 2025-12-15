@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_str_f.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 19:20:58 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/13 17:31:23 by anashwan         ###   ########.fr       */
+/*   Created: 2025/09/15 20:33:47 by anashwan          #+#    #+#             */
+/*   Updated: 2025/09/15 23:29:51 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	swap(t_stack *s, char c)
+static size_t	ft_strlen_f(const char *s)
 {
-	int temp;
+	size_t	i;
 
-	if (s->size < 2)
-		return (0);
-	temp = s->head->value;
-	s->head->value = s->head->next->value;
-	s->head->next->value = temp;
-	if (c == 'a' || c == 'b')
-		ft_printf("s%c\n", c);
-	return (1);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
-void	ss(t_stack *a, t_stack *b)
+int	ft_str_f(const char *s)
 {
-	if (swap(a, 's') || swap(b, 's'))
-		ft_printf("ss\n");
+	if (!s)
+		return (write(1, "(null)", 6));
+	return (write(1, s, ft_strlen_f(s)));
 }

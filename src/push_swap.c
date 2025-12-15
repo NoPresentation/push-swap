@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:14:31 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/14 14:08:55 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 21:46:05 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	final_touch(t_stack *a)
+static void	final_touch(t_stack *a)
 {
 	while (a->min->cost < 0)
 	{
@@ -26,9 +26,9 @@ void	final_touch(t_stack *a)
 	}
 }
 
-void	different_operations(t_stack *a, t_stack *b)
+static void	different_operations(t_stack *a, t_stack *b)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = b->cheapest;
 	while (node->cost < 0)
@@ -54,11 +54,11 @@ void	different_operations(t_stack *a, t_stack *b)
 	pa(a, b);
 }
 
-void	perform_operations(t_stack *a, t_stack *b)
+static void	perform_operations(t_stack *a, t_stack *b)
 {
-	t_node *node;
+	t_node	*node;
 	int		i;
-	
+
 	node = b->cheapest;
 	i = 0;
 	if (node->cost < 0 && node->target->cost < 0)
@@ -68,7 +68,7 @@ void	perform_operations(t_stack *a, t_stack *b)
 		node->target->cost -= i;
 		while (i++ < 0)
 			rrr(a, b);
-		}
+	}
 	else if (node->cost > 0 && node->target->cost > 0)
 	{
 		i = min(node->cost, node->target->cost);
@@ -80,9 +80,45 @@ void	perform_operations(t_stack *a, t_stack *b)
 	different_operations(a, b);
 }
 
+static void	sort_three(t_stack *a)
+{
+	int	x;
+	int	y;
+	int	z;
+	
+	x = a->head->value;
+	y = a->head->next->value;
+	z = a->tail->value;
+	if (x > y && y < z && x > z)
+		rotate(a, 'a');
+	else if (x < y && y > z && x > z)
+		rev_rotate(a, 'a');
+	else if (x > y && y > z)
+	{
+		swap(a, 'a');
+		rev_rotate(a, 'a');
+	}
+	else if (x > y && y < z && x < z)
+		swap(a, 'a');
+	else if (x < y && y > z && x < z)
+	{
+		swap(a, 'a');
+		rotate(a, 'a');
+	}
+}	
 
 void	push_swap(t_stack *a, t_stack *b)
 {
+	if (a->size == 2)
+	{
+		swap(a, 'a');
+		return ;
+	}
+	else if (a->size == 3)
+	{
+		sort_three(a);
+		return ;	
+	}
 	while (a->size > 3)
 		pb(a, b);
 	sort_three(a);

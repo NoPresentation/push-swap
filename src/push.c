@@ -16,6 +16,7 @@ int	pa(t_stack *a, t_stack *b)
 {
 	int		*value;
 	t_node	*node;
+
 	if (b->size == 0)
 		return (1);
 	value = pop(b);
@@ -32,9 +33,9 @@ int	pa(t_stack *a, t_stack *b)
 
 int	pb(t_stack *a, t_stack *b)
 {
-	int		*value;
-	t_node	*node;
-	
+	int *value;
+	t_node *node;
+
 	if (a->size == 0)
 		return (1);
 	value = pop(a);

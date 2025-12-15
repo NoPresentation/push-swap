@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:30:13 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/14 11:40:06 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 20:03:05 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	rotate(t_stack *s, char c)
 {
 	t_node	*temp;
-	
+
 	temp = s->head;
 	if (s->size <= 1)
 		return (0);
@@ -32,7 +32,10 @@ int	rotate(t_stack *s, char c)
 
 void	rr(t_stack *a, t_stack *b)
 {
-	if (rotate(a, 'r') || rotate(b, 'r'))
+	int	x;
+
+	x = rotate(a, 'r') + rotate(b, 'r');
+	if (x)
 		ft_printf("rr\n");
 }
 
@@ -56,6 +59,9 @@ int	rev_rotate(t_stack *s, char c)
 
 void	rrr(t_stack *a, t_stack *b)
 {
-	if  (rev_rotate(a, 'r') || rev_rotate(b, 'r'))
+	int x;
+
+	x = rev_rotate(a, 'r') + rev_rotate(b, 'r');
+	if (x)
 		ft_printf("rrr\n");
 }

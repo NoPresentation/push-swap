@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/13 03:52:10 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/13 23:12:25 by anashwan         ###   ########.fr       */
+/*   Created: 2025/09/09 17:03:26 by anashwan          #+#    #+#             */
+/*   Updated: 2025/12/15 23:38:50 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef MINILIBFT_H
+# define MINILIBFT_H
 
-int		max(int x, int y)
-{
-	if (x >= y)
-		return (x);
-	return (y);
-}
+# include <stdlib.h>
+# include <unistd.h>
 
-int		min(int x, int y)
-{
-	if (x <= y)
-		return (x);
-	return (y);
-}
+int			ft_isdigit(int c);
+char		**ft_split(char const *s, char c);
+int			ft_atoi(const char *nptr);
 
-int		abs(int x)
-{
-	if (x >= 0)
-		return (x);
-	return (-1 * x);
-}
+#endif

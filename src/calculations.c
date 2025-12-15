@@ -6,18 +6,18 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 23:10:12 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/14 14:07:35 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 21:48:38 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 void	find_cheapest(t_stack *b)
 {
-	t_node *node;
+	t_node	*node;
 	int		min_cost;
 	int		total_cost;
-	
+
 	node = b->head;
 	min_cost = INT_MAX;
 	while (node)
@@ -39,8 +39,8 @@ void	find_cheapest(t_stack *b)
 
 void	assign_targets(t_stack *first, t_stack *second)
 {
-	t_node *i;
-	t_node *j;
+	t_node	*i;
+	t_node	*j;
 	int		holder;
 
 	i = first->head;
@@ -53,7 +53,7 @@ void	assign_targets(t_stack *first, t_stack *second)
 			if (i->value > second->max->value || i->value < second->min->value)
 			{
 				i->target = second->min;
-				break;;
+				break ;
 			}
 			if (j->value - i->value > 0 && j->value - i->value < holder)
 			{
@@ -66,11 +66,10 @@ void	assign_targets(t_stack *first, t_stack *second)
 	}
 }
 
-
-void	find_min_max(t_stack *s)
+static void	find_min_max(t_stack *s)
 {
-	t_node *node;
-	
+	t_node	*node;
+
 	s->min = s->head;
 	s->max = s->head;
 	node = s->head;
@@ -81,14 +80,14 @@ void	find_min_max(t_stack *s)
 		if (node->value > s->max->value)
 			s->max = node;
 		node = node->next;
-	}	
+	}
 }
 
 void	calculate_cost(t_stack *s)
 {
-	int	mid_line;
-	t_node *node;
-	int	i;
+	int		mid_line;
+	t_node	*node;
+	int		i;
 
 	find_min_max(s);
 	i = 0;
