@@ -14,9 +14,9 @@ SRC = \
 	src/swap.c \
 	src/stack.c \
 	src/utils.c \
-	libft/ft_atoi.c \
-	libft/ft_split.c \
-	libft/ft_isdigit.c \
+	mini_libft/ft_atoi.c \
+	mini_libft/ft_split.c \
+	mini_libft/ft_isdigit.c \
 	ft_printf/ft_printf.c \
 	ft_printf/ft_putnbr_base.c \
 	ft_printf/ft_str_f.c \
@@ -27,15 +27,16 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "Building your push_swap executable..."
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -r *.o
+	@rm -rf *.o
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all clean 
