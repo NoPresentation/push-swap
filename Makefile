@@ -35,6 +35,8 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -f src/*.o
+	@rm -f src/helpers/*.o
+	@rm -f src/operations/*.o
 	@rm -f mini_libft/*.o
 	@rm -f ft_printf/*.o
 
