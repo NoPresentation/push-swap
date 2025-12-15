@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:30:13 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 20:03:05 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:45:56 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	rotate(t_stack *s, char c)
 {

@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 00:09:23 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 23:39:06 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:53:46 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdio.h>
 # include <unistd.h>
-#include <limits.h>
-# include "../libft/minilibft.h"
+# include <limits.h>
+# include "../mini_libft/mini_libft.h"
 # include "../ft_printf/ft_printf.h"
 
 typedef struct doubly_list

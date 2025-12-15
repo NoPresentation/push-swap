@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:20:42 by anashwan          #+#    #+#             */
-/*   Updated: 2025/09/10 18:22:14 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:52:59 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "mini_libft.h"
 
 int	ft_isdigit(int c)
 {

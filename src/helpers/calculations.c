@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 23:10:12 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 21:48:38 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:49:11 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	find_cheapest(t_stack *b)
 {

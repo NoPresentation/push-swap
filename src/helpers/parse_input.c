@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 10:58:11 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 21:12:05 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:49:04 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	free_split(char **s)
 {

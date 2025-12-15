@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 03:52:10 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 20:32:51 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:45:40 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	max(int x, int y)
 {

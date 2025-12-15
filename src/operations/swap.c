@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:20:58 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 20:03:33 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:45:34 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	swap(t_stack *s, char c)
 {

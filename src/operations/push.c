@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:01:21 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/13 17:12:09 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:45:20 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	pa(t_stack *a, t_stack *b)
 {

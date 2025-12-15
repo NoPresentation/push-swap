@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 18:14:48 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/03 14:53:42 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:53:33 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "mini_libft.h"
 
 /*
 1. Count strings [OK]

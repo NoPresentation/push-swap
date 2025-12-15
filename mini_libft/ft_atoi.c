@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 12:21:27 by anashwan          #+#    #+#             */
-/*   Updated: 2025/09/11 13:25:42 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:53:37 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "mini_libft.h"
 
 int	ft_atoi(const char *nptr)
 {

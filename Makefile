@@ -6,14 +6,14 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC = \
 	src/main.c \
-	src/calculations.c \
-	src/parse_input.c \
-	src/push.c \
 	src/push_swap.c \
-	src/rotate.c \
-	src/swap.c \
-	src/stack.c \
-	src/utils.c \
+	src/helpers//calculations.c \
+	src/helpers/parse_input.c \
+	src/operations/push.c \
+	src/operations/rotate.c \
+	src/operations/swap.c \
+	src/operations/stack.c \
+	src/operations/utils.c \
 	mini_libft/ft_atoi.c \
 	mini_libft/ft_split.c \
 	mini_libft/ft_isdigit.c \
@@ -34,7 +34,10 @@ $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	@rm -rf *.o
+	@rm -f src/*.o
+	@rm -f mini_libft/*.o
+	@rm -f ft_printf/*.o
+
 
 fclean: clean
 	@rm -f $(NAME)

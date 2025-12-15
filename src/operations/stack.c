@@ -6,11 +6,11 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 22:44:55 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 21:45:50 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:45:43 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	push(t_stack *s, t_node *n)
 {
