@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_libft.h                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 17:03:26 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/17 22:13:35 by anashwan         ###   ########.fr       */
+/*   Created: 2025/08/05 13:29:37 by anashwan          #+#    #+#             */
+/*   Updated: 2025/12/16 13:42:04 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_LIBFT_H
-# define MINI_LIBFT_H
+#include "mini_libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-int			ft_isdigit(int c);
-char		**ft_split(char const *s, char c);
-int			ft_atoi(const char *nptr);
-int			ft_strcmp(const char *s1, const char *s2);
-size_t		ft_strlen(const char *s);
-#endif
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}

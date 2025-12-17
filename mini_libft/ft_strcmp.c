@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_libft.h                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 17:03:26 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/17 22:13:35 by anashwan         ###   ########.fr       */
+/*   Created: 2025/08/07 16:49:18 by anashwan          #+#    #+#             */
+/*   Updated: 2025/12/17 01:46:17 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_LIBFT_H
-# define MINI_LIBFT_H
+#include "mini_libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	unsigned char	*p1;
+	unsigned char	*p2;
+	size_t			i;
 
-int			ft_isdigit(int c);
-char		**ft_split(char const *s, char c);
-int			ft_atoi(const char *nptr);
-int			ft_strcmp(const char *s1, const char *s2);
-size_t		ft_strlen(const char *s);
-#endif
+	if (s1 == s2)
+		return (0);
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	i = 0;
+	while (p1[i] || p2[i])
+	{
+		if ((!p1[i] || !p2[i]) || p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		i++;
+	}
+	return (0);
+}

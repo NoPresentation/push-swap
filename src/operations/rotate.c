@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:30:13 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 23:45:56 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/17 22:13:54 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	rev_rotate(t_stack *s, char c)
 
 void	rrr(t_stack *a, t_stack *b)
 {
-	int x;
+	int	x;
 
 	x = rev_rotate(a, 'r') + rev_rotate(b, 'r');
 	if (x)

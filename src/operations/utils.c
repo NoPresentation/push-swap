@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 03:52:10 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 23:45:40 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/17 22:09:40 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	abs(int x)
 
 int	is_sorted(t_stack *a)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = a->head;
 	while (node->next)
@@ -45,4 +45,20 @@ int	is_sorted(t_stack *a)
 		node = node->next;
 	}
 	return (1);
+}
+
+void	free_split(char **s)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+	s = NULL;
 }

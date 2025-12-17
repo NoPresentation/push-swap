@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:14:31 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 23:49:25 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/17 10:10:18 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	different_operations(t_stack *a, t_stack *b)
 		rotate(a, 'a');
 		node->target->cost--;
 	}
-	pa(a, b);
+	pa(a, b, 'a');
 }
 
 static void	perform_operations(t_stack *a, t_stack *b)
@@ -85,7 +85,7 @@ static void	sort_three(t_stack *a)
 	int	x;
 	int	y;
 	int	z;
-	
+
 	x = a->head->value;
 	y = a->head->next->value;
 	z = a->tail->value;
@@ -105,7 +105,7 @@ static void	sort_three(t_stack *a)
 		swap(a, 'a');
 		rotate(a, 'a');
 	}
-}	
+}
 
 void	push_swap(t_stack *a, t_stack *b)
 {
@@ -117,10 +117,10 @@ void	push_swap(t_stack *a, t_stack *b)
 	else if (a->size == 3)
 	{
 		sort_three(a);
-		return ;	
+		return ;
 	}
 	while (a->size > 3)
-		pb(a, b);
+		pb(a, b, 'b');
 	sort_three(a);
 	while (b->size > 0)
 	{

@@ -6,13 +6,13 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:01:21 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 23:45:20 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/17 22:10:41 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	pa(t_stack *a, t_stack *b)
+int	pa(t_stack *a, t_stack *b, char c)
 {
 	int		*value;
 	t_node	*node;
@@ -27,14 +27,15 @@ int	pa(t_stack *a, t_stack *b)
 		return (0);
 	push(a, node);
 	free(value);
-	ft_printf("pa\n");
+	if (c == 'a')
+		ft_printf("pa\n");
 	return (1);
 }
 
-int	pb(t_stack *a, t_stack *b)
+int	pb(t_stack *a, t_stack *b, char c)
 {
-	int *value;
-	t_node *node;
+	int		*value;
+	t_node	*node;
 
 	if (a->size == 0)
 		return (1);
@@ -46,6 +47,7 @@ int	pb(t_stack *a, t_stack *b)
 		return (0);
 	push(b, node);
 	free(value);
-	ft_printf("pb\n");
+	if (c == 'b')
+		ft_printf("pb\n");
 	return (1);
 }

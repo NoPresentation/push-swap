@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:20:58 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 23:45:34 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/17 22:08:40 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	swap(t_stack *s, char c)
 
 void	ss(t_stack *a, t_stack *b)
 {
-	int x;
+	int	x;
 
 	x = swap(a, 's') + swap(b, 's');
 	if (x)
