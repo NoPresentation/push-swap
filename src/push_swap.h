@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 00:09:23 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/17 22:13:11 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/18 19:20:55 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ typedef struct s_stack
 // Validation
 t_stack				*parse_input(int argc, char **argv);
 int					is_sorted(t_stack *a);
+int					is_int(char *input);
+int					is_number(char **input);
+int					is_duplicate(char **input);
+
 // Sortin
 void				push_swap(t_stack *a, t_stack *b);
 // Stack function

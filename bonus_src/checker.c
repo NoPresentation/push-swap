@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:41:51 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/17 10:23:24 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/18 18:05:01 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 static void	do_swap(const char *move, t_stack *a, t_stack *b)
 {
-	if (ft_strcmp(move, "sa") == 0)
+	if (ft_strcmp(move, "sa\n") == 0)
 		swap(a, '-');
-	else if (ft_strcmp(move, "sb") == 0)
+	else if (ft_strcmp(move, "sb\n") == 0)
 		swap(b, '-');
-	else if (ft_strcmp(move, "ss") == 0)
+	else if (ft_strcmp(move, "ss\n") == 0)
 	{
 		swap(a, '-');
 		swap(b, '-');
@@ -29,20 +29,20 @@ static void	do_swap(const char *move, t_stack *a, t_stack *b)
 
 static void	do_rotate(const char *move, t_stack *a, t_stack *b)
 {
-	if (ft_strcmp(move, "ra") == 0)
+	if (ft_strcmp(move, "ra\n") == 0)
 		rotate(a, '-');
-	else if (ft_strcmp(move, "rb") == 0)
+	else if (ft_strcmp(move, "rb\n") == 0)
 		rotate(b, '-');
-	else if (ft_strcmp(move, "rr") == 0)
+	else if (ft_strcmp(move, "rr\n") == 0)
 	{
 		rotate(a, '-');
 		rotate(b, '-');
 	}
-	else if (ft_strcmp(move, "rra") == 0)
+	else if (ft_strcmp(move, "rra\n") == 0)
 		rev_rotate(a, '-');
-	else if (ft_strcmp(move, "rrb") == 0)
+	else if (ft_strcmp(move, "rrb\n") == 0)
 		rev_rotate(b, '-');
-	else if (ft_strcmp(move, "rrr") == 0)
+	else if (ft_strcmp(move, "rrr\n") == 0)
 	{
 		rev_rotate(a, '-');
 		rev_rotate(b, '-');
@@ -51,18 +51,18 @@ static void	do_rotate(const char *move, t_stack *a, t_stack *b)
 
 int	excute_moves(const char *move, t_stack *a, t_stack *b)
 {
-	if (ft_strcmp(move, "pa") == 0)
+	if (ft_strcmp(move, "pa\n") == 0)
 		pa(a, b, '-');
-	else if (ft_strcmp(move, "pb") == 0)
+	else if (ft_strcmp(move, "pb\n") == 0)
 		pb(a, b, '-');
-	else if (ft_strcmp(move, "sa") == 0 || ft_strcmp(move, "sb") == 0
-		|| ft_strcmp(move, "ss") == 0)
+	else if (ft_strcmp(move, "sa\n") == 0 || ft_strcmp(move, "sb\n") == 0
+		|| ft_strcmp(move, "ss\n") == 0)
 		do_swap(move, a, b);
-	else if (ft_strcmp(move, "ra") == 0 || ft_strcmp(move, "rb") == 0
-		|| ft_strcmp(move, "rr") == 0)
+	else if (ft_strcmp(move, "ra\n") == 0 || ft_strcmp(move, "rb\n") == 0
+		|| ft_strcmp(move, "rr\n") == 0)
 		do_rotate(move, a, b);
-	else if (ft_strcmp(move, "rra") == 0 || ft_strcmp(move, "rrb") == 0
-		|| ft_strcmp(move, "rrr") == 0)
+	else if (ft_strcmp(move, "rra\n") == 0 || ft_strcmp(move, "rrb\n") == 0
+		|| ft_strcmp(move, "rrr\n") == 0)
 		do_rotate(move, a, b);
 	else
 		return (0);
@@ -84,6 +84,7 @@ static void	read_moves(t_stack *a, t_stack *b)
 			free(move);
 			return ;
 		}
+		free(move);
 		move = get_next_line(0);
 	}
 	free(move);

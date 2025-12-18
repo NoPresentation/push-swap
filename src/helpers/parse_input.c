@@ -6,56 +6,12 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 10:58:11 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/17 22:13:27 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/18 19:21:12 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	is_number(char **input)
-{
-	int			i;
-	const char	*s;
-
-	while (*input)
-	{
-		i = 0;
-		s = *input;
-		if (s[i] == '-' || s[i] == '+')
-			i++;
-		if (s[i] == '\0')
-			return (0);
-		while (s[i])
-		{
-			if (!ft_isdigit(s[i]))
-				return (0);
-			i++;
-		}
-		input++;
-	}
-	return (1);
-}
-
-static int	is_duplicate(char **input)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (input[i])
-	{
-		j = i + 1;
-		while (input[j])
-		{
-			if (ft_strcmp(input[i], input[j]) == 0)
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
 
 static size_t	input_count(char **input)
 {
@@ -80,7 +36,7 @@ static t_stack	*push_input(int size, char **input)
 	i = size - 1;
 	while (i >= 0)
 	{
-		value = ft_atoi(input[i]);
+		value = ft_atol(input[i]);
 		node = create_node(value);
 		if (!node)
 		{

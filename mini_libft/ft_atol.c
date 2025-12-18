@@ -6,17 +6,17 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 12:21:27 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/15 23:53:37 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/18 19:12:12 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mini_libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	number;
+	long		i;
+	int			sign;
+	long		number;
 
 	i = 0;
 	sign = 1;
