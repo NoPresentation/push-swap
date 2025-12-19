@@ -12,7 +12,7 @@ def main():
 
 	script_dir = Path(__file__).parent.resolve()
 	push_swap_path = script_dir.parent / "push_swap"
-	checker_path   = script_dir.parent / "checker"
+	checker_path   = script_dir.parent / "checker_linux" # <- To change the checker, change it from here
 
 	tests = [1, 2, 3, 5, 10, 100, 500]
 	print("Numbers\t\tResult\t\tMoves")
