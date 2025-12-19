@@ -12,7 +12,6 @@
 
 #include "../push_swap.h"
 
-
 static size_t	input_count(char **input)
 {
 	size_t	count;
