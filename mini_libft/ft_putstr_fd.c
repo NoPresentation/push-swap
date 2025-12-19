@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_libft.h                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 17:03:26 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/19 18:15:58 by anashwan         ###   ########.fr       */
+/*   Created: 2025/08/26 15:16:54 by anashwan          #+#    #+#             */
+/*   Updated: 2025/12/19 18:15:46 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_LIBFT_H
-# define MINI_LIBFT_H
+#include "mini_libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-int			ft_isdigit(int c);
-char		**ft_split(char const *s, char c);
-long		ft_atol(const char *nptr);
-int			ft_strcmp(const char *s1, const char *s2);
-size_t		ft_strlen(const char *s);
-void		ft_putstr_fd(char *s, int fd);
-
-#endif
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
+}

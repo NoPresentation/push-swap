@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:41:51 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/18 18:05:01 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/19 18:22:59 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	main(int argc, char *argv[])
 	{
 		free_stack(&a);
 		free_stack(&b);
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
 	read_moves(a, b);

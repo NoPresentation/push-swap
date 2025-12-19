@@ -3,7 +3,7 @@ import random
 from pathlib import Path
 
 def main():
-	# Some colors for the dramatic effect
+	# Some colors
 	GREEN = "\033[32m"
 	RED   = "\033[31m"
 	GRAY  = "\033[90m"
@@ -34,7 +34,7 @@ def main():
 		# Hopefully no errors here...
 		if (output.stderr):
 			print("...\nERROR!!")
-			print("Make sure push_swap and checker_linux are in the right paths!")
+			print("Make sure push_swap and checker_linux are in the right paths and have the correct permissions!")
 			print("This checker assumes both of them are in the root directory of this repo.")
 			exit()
 

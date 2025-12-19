@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 22:11:26 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/18 17:44:15 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/19 18:16:54 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	{
 		free_stack(&a);
 		free_stack(&b);
-		ft_printf("Error\n"); // print to stderror u idiot
+		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
 	if (!is_sorted(a))

@@ -21,6 +21,8 @@ SRC = \
 	mini_libft/ft_split.c \
 	mini_libft/ft_isdigit.c \
 	mini_libft/ft_strcmp.c \
+	mini_libft/ft_putstr_fd.c \
+	mini_libft/ft_strlen.c \
 	ft_printf/ft_printf.c \
 	ft_printf/ft_putnbr_base.c \
 	ft_printf/ft_str_f.c \
@@ -40,6 +42,7 @@ BONUS_SRC = \
 		mini_libft/ft_isdigit.c \
 		mini_libft/ft_strlen.c \
 		mini_libft/ft_strcmp.c \
+		mini_libft/ft_putstr_fd.c \
 		ft_printf/ft_printf.c \
 		ft_printf/ft_putnbr_base.c \
 		ft_printf/ft_str_f.c \
