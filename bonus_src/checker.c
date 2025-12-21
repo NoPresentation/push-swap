@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:41:51 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/19 18:22:59 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/21 17:14:34 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	excute_moves(const char *move, t_stack *a, t_stack *b)
 	return (1);
 }
 
-static void	read_moves(t_stack *a, t_stack *b)
+static int	read_moves(t_stack *a, t_stack *b)
 {
 	char	*move;
 	int		x;
@@ -82,12 +82,15 @@ static void	read_moves(t_stack *a, t_stack *b)
 		{
 			ft_printf("Error\n");
 			free(move);
-			return ;
+			free_stack(&a);
+			free_stack(&b);
+			return (0);
 		}
 		free(move);
 		move = get_next_line(0);
 	}
 	free(move);
+	return (1);
 }
 
 int	main(int argc, char *argv[])
@@ -106,7 +109,8 @@ int	main(int argc, char *argv[])
 		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
-	read_moves(a, b);
+	if (!read_moves(a, b))
+		return (0);
 	if (is_sorted(a))
 		ft_printf("OK\n");
 	else

@@ -4,7 +4,7 @@ BONUS = checker
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 SRC = \
 	src/main.c \

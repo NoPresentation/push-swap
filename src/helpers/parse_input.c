@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 10:58:11 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/18 19:21:12 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/21 17:00:28 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static t_stack	*push_input(int size, char **input)
 		push(a, node);
 		i--;
 	}
+	if (is_duplicate(a))
+		free_stack(&a);
 	return (a);
 }
 
@@ -57,7 +59,7 @@ t_stack	*parse_input(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 		if (!argv)
 			return (NULL);
-		if (is_duplicate(argv) || !is_number(argv))
+		if (argv[0] == NULL || !is_number(argv))
 		{
 			free_split(argv);
 			return (NULL);
@@ -67,7 +69,7 @@ t_stack	*parse_input(int argc, char **argv)
 	}
 	else
 	{
-		if (is_duplicate(argv + 1) || !is_number(argv + 1))
+		if (!is_number(argv + 1))
 			return (NULL);
 		a = push_input(argc - 1, argv + 1);
 	}

@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 17:03:26 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/19 18:15:58 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/21 15:32:40 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 int			ft_isdigit(int c);
 char		**ft_split(char const *s, char c);

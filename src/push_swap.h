@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 00:09:23 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/18 19:20:55 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/21 16:34:46 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ t_stack				*parse_input(int argc, char **argv);
 int					is_sorted(t_stack *a);
 int					is_int(char *input);
 int					is_number(char **input);
-int					is_duplicate(char **input);
-
+int					is_duplicate(t_stack *a);
 // Sortin
 void				push_swap(t_stack *a, t_stack *b);
 // Stack function
