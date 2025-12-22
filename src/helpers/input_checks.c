@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 18:06:21 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/21 16:31:07 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/22 17:20:56 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 int	is_int(char *input)
 {
 	long	n;
-
+	if (ft_strlen(input) > 11)
+		return (0);
 	n = ft_atol(input);
 	if (n > INT_MAX || n < INT_MIN)
 		return (0);
