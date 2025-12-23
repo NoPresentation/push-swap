@@ -6,7 +6,7 @@
 /*   By: anashwan <anashwan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:41:51 by anashwan          #+#    #+#             */
-/*   Updated: 2025/12/21 17:14:34 by anashwan         ###   ########.fr       */
+/*   Updated: 2025/12/23 21:29:53 by anashwan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static int	read_moves(t_stack *a, t_stack *b)
 		x = excute_moves(move, a, b);
 		if (!x)
 		{
-			ft_printf("Error\n");
+			ft_putstr_fd("Error\n", 2);
 			free(move);
 			free_stack(&a);
 			free_stack(&b);
